@@ -1,31 +1,57 @@
 # VIT Bhopal SGPA and CGPA Calculator
 
-This is a simple Python command-line program that helps students calculate SGPA and CGPA using the VIT-style 10-point grading system.
+A simple Python command-line application for calculating `SGPA` and `CGPA` using the common VIT Bhopal 10-point grading system.
 
-## What It Does
+This project is designed for students who want a quick, reliable way to compute academic performance without doing repeated manual weighted-average calculations.
 
-The program can:
+## Features
 
-- calculate SGPA for one semester
-- calculate CGPA from semester SGPAs
-- calculate CGPA from subject-wise grades across multiple semesters
+- Calculate `SGPA` from subject-wise grades and credits
+- Calculate `CGPA` from semester `SGPA` values and semester credits
+- Calculate `CGPA` directly from subject-wise grades across multiple semesters
+- Validate user input to reduce mistakes
+- Show total credits, weighted points, and final result clearly
 
 ## Grade Mapping
 
-- `S = 10`
-- `A = 9`
-- `B = 8`
-- `C = 7`
-- `D = 6`
-- `E = 5`
-- `F = 0`
-- `N = 0`
+The calculator uses this VIT-style grade-to-point mapping:
+
+| Grade | Points |
+|-------|--------|
+| `S`   | `10`   |
+| `A`   | `9`    |
+| `B`   | `8`    |
+| `C`   | `7`    |
+| `D`   | `6`    |
+| `E`   | `5`    |
+| `F`   | `0`    |
+| `N`   | `0`    |
+
+## Formulas Used
+
+**SGPA**
+
+`SGPA = Sum(Credits x Grade Points) / Sum(Credits)`
+
+**CGPA from semester SGPAs**
+
+`CGPA = Sum(Semester SGPA x Semester Credits) / Sum(Semester Credits)`
+
+**CGPA from all course grades**
+
+`CGPA = Sum(Credits x Grade Points for all subjects) / Sum(All Credits)`
+
+**Approximate percentage**
+
+`Percentage = CGPA x 10`
+
+Note: the percentage value is only an estimate and may not exactly match official university conversion rules.
 
 ## Requirements
 
-- Python 3 installed
+- Python 3
 
-Check Python version:
+Check your Python installation with:
 
 ```bash
 python --version
@@ -33,26 +59,26 @@ python --version
 
 ## How to Run
 
-Open a terminal in the project folder and run:
+From the project folder, run:
 
 ```bash
-python g2.py
+python AIML_code.py
 ```
 
 If `python` does not work on your system, try:
 
 ```bash
-py g2.py
+py AIML_code.py
 ```
 
-## How to Use
+## Menu Options
 
-When the program starts, it shows 3 options:
+When the program starts, it shows three options:
 
-1. Calculate SGPA from subject grades
-2. Calculate CGPA from semester SGPAs
-3. Calculate CGPA from all course grades
-
+1. Calculate `SGPA` from subject grades
+2. Calculate `CGPA` from semester `SGPA` values
+3. Calculate `CGPA` directly from all course grades
+   
 Enter the option number and then provide the required details.
 
 ### Option 1
@@ -84,10 +110,14 @@ Enter:
 
 ## Input Rules
 
-- subjects and semesters must be positive whole numbers
-- credits must be positive numbers
-- SGPA must be between `0` and `10`
-- grades must be one of `S, A, B, C, D, E, F, N`
+The program accepts only valid inputs:
+
+- Number of subjects and semesters must be positive whole numbers
+- Credits must be positive numbers
+- `SGPA` must be between `0` and `10`
+- Grades must be one of `S`, `A`, `B`, `C`, `D`, `E`, `F`, or `N`
+
+If an invalid value is entered, the program asks again instead of crashing.
 
 ## Output
 
@@ -98,10 +128,18 @@ The program displays:
 - SGPA or CGPA
 - approximate percentage for CGPA
 
-## Note
 
-The percentage is shown as:
+## Why This Project Is Useful
 
-`CGPA x 10`
+- Reduces errors in manual grade calculation
+- Saves time when checking academic performance
+- Supports multiple ways of calculating `CGPA`
+- Demonstrates clean, modular Python programming for beginners
 
-This is only an approximate value.
+## Future Improvements
+
+- Add a graphical user interface
+- Save semester history to a file or database
+- Export results as a report
+- Support multiple university grading systems
+- Add trend analysis across semesters
