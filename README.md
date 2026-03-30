@@ -144,7 +144,7 @@ The program displays:
 - Support multiple university grading systems
 - Add trend analysis across semesters
 
-  ## Author
+## Author
 
 **Pratham Yadav**  
 Registration Number: **25BAI11032**  
