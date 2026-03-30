@@ -143,3 +143,10 @@ The program displays:
 - Export results as a report
 - Support multiple university grading systems
 - Add trend analysis across semesters
+
+  ## Author
+
+**Pratham Yadav**  
+Registration Number: **25BAI11032**  
+VIT Bhopal University
+
